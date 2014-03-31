@@ -1,0 +1,10 @@
+---
+
+- name:  Provision development environment
+  hosts: dev
+  sudo:  True
+  vars:
+    deploy_user: "{{ lookup('env','USER') }}"
+  roles:
+     - { role: dev }
+     - { role: deploy }
